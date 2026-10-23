@@ -1,0 +1,201 @@
+<header class="header-57" id="page-header">
+<div class="header-holder">
+<div class="container">
+<div class="row">
+<div class="col-xs-6 col-sm-3">
+<!-- logo -->
+<div class="logo">
+<a href="index.html">
+<img alt="Logo" class="default-logo site-logo-img" src="assets/images/header-57-logo.png" style="display: none;"/>
+<div class="generated-logo text-logo" style="">FANCYSHOP</div>
+</a>
+</div>
+</div>
+<div class="col-xs-6 col-sm-9 static-block">
+<!-- nav -->
+<nav class="navbar navbar-default justify-end" id="nav">
+<div class="navbar-header">
+<button aria-expanded="false" class="navbar-toggle collapsed" data-target="#dynamic-header" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="collapse navbar-collapse" id="dynamic-header"><ul class="nav navbar-nav navbar-right main-navigation text-uppercase font-lato"><li><a href="index.html">Home</a></li><li><a href="About_Us.html">About Us</a></li><li><a href="Services.html">Services</a></li><li><a href="Pricing.html">Pricing</a></li><li><a href="Contact_Us.html">Contact Us</a></li></ul></div>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Sticky scroll logic -->
+<script>
+	$(window).on('scroll', function () {
+		if ($(this).scrollTop() > 50) {
+			$('header.header-57').addClass('sticky-active');
+		} else {
+			$('header.header-57').removeClass('sticky-active');
+		}
+	});
+</script>
+<section class="section-wrapper header-57-section main-header-section">
+<div class="hero-bg" style="background:url('assets/images/header-57-slider-1.jpg') center center/cover no-repeat;
+">
+<div class="hero-overlay"></div>
+<div class="container">
+<div class="hero-content">
+<div class="hero-circle"></div>
+<span class="hero-badge">
+        HOLISTIC WELLNESS
+    </span>
+<h1 class="hero-title">
+        Breathe.<br/>
+        Stretch.<br/>
+        Transform.
+    </h1>
+<p class="hero-description">
+        Reconnect with yourself through peaceful yoga,
+        mindful meditation and wellness experiences
+        surrounded by calmness.
+    </p>
+<a class="hero-btn" href="#">
+        Join Today's Session
+        <span>→</span>
+</a>
+</div>
+</div>
+<div class="hero-info-bar">
+<div class="hero-info-box">
+<div class="hero-icon">🧘</div>
+<div>
+<h4>250+</h4>
+<p>Happy Members</p>
+</div>
+</div>
+<div class="hero-info-box">
+<div class="hero-icon">🌿</div>
+<div>
+<h4>15+</h4>
+<p>Certified Trainers</p>
+</div>
+</div>
+<div class="hero-info-box">
+<div class="hero-icon">☀️</div>
+<div>
+<h4>Daily</h4>
+<p>Morning Sessions</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="header-breadcrumb-section" style="background: url('assets/images/header-57-breadcrumb-section-bg.jpg') center center / cover no-repeat;">
+<div class="container text-center">
+<h1 class="header-breadcrumb-section-title"><span class="Page_name">Page Name</span></h1>
+<p class="header-breadcrumb-section-breadcrumb">
+<a href="index.html">Home</a> &gt; <span class="Page_name">Page Name</span>
+</p>
+</div>
+</section>
+<script>
+
+gsap.registerPlugin(ScrollTrigger);
+
+/* Initial Load Animation */
+const tl = gsap.timeline();
+
+tl.from(".hero-badge",{
+    opacity:0,
+    y:50,
+    duration:0.8
+})
+.from(".hero-title",{
+    opacity:0,
+    y:80,
+    duration:1,
+    ease:"power4.out"
+},"-=0.4")
+.from(".hero-description",{
+    opacity:0,
+    y:50,
+    duration:0.8
+},"-=0.5")
+.from(".hero-btn",{
+    opacity:0,
+    y:40,
+    scale:.9,
+    duration:0.8
+},"-=0.4")
+.from(".hero-info-box",{
+    opacity:0,
+    y:80,
+    stagger:0.15,
+    duration:0.8
+},"-=0.4");
+
+
+/* Background Zoom On Scroll */
+gsap.to(".hero-bg",{
+    scale:1.15,
+    scrollTrigger:{
+        trigger:".main-header-section",
+        start:"top top",
+        end:"bottom top",
+        scrub:1
+    }
+});
+
+
+/* Content Parallax */
+gsap.to(".hero-content",{
+    y:-120,
+    scrollTrigger:{
+        trigger:".main-header-section",
+        start:"top top",
+        end:"bottom top",
+        scrub:1
+    }
+});
+
+
+/* Info Bar Parallax */
+gsap.to(".hero-info-bar",{
+    y:-80,
+    scrollTrigger:{
+        trigger:".main-header-section",
+        start:"top top",
+        end:"bottom top",
+        scrub:1.5
+    }
+});
+
+
+/* Mouse Move Premium Effect */
+const hero = document.querySelector(".hero-content");
+
+document.addEventListener("mousemove",(e)=>{
+
+    let x = (e.clientX / window.innerWidth - 0.5) * 20;
+    let y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+    gsap.to(hero,{
+        x:x,
+        y:y,
+        duration:1.5,
+        ease:"power3.out"
+    });
+
+});
+
+
+/* Floating Badge */
+gsap.to(".hero-badge",{
+    y:-15,
+    repeat:-1,
+    yoyo:true,
+    duration:2,
+    ease:"sine.inOut"
+});
+
+</script>
